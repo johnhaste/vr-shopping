@@ -13,8 +13,9 @@ public class SpawnerManager : MonoBehaviour
             GameObject newObject = Instantiate(currentObject, currentObject.transform.position, Quaternion.identity);
             newObject.GetComponent<Product>().productSingularity = Product.singularity.ORIGINAL;
 
-            //Make the current object become a copy
+            //Make the current object in my hand become a copy
             currentObject.GetComponent<Product>().productSingularity = Product.singularity.COPY;
+            currentObject.GetComponent<Product>().grabArea.GetComponent<BoxCollider>().enabled = false;
             currentObject.GetComponent<TurnAround>().enabled = false;
 
         }

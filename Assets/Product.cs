@@ -17,6 +17,8 @@ public class Product : MonoBehaviour
     public singularity productSingularity;
     public state productState;
 
+    //Grab area
+    public GameObject grabArea;
 
     //Check collision
     /*
