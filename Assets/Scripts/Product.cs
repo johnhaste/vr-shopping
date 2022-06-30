@@ -7,6 +7,7 @@ public class Product : MonoBehaviour
 {
     //Attributes
     public string name;
+    public string descr;
     public float price;
     public singularity productSingularity;
     public state productState;

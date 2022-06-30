@@ -27,6 +27,11 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        listOfProducts.text = "Your cart is currently empty!";
+    }
+
     public void UpdatePrice(float totalPrice)
     {
         totalPriceCartText.text = "Total: U$$" + totalPrice;
