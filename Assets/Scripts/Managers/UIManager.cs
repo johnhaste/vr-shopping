@@ -34,8 +34,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdatePrice(float totalPrice)
     {
-        totalPriceCartText.text = "Total: U$$" + totalPrice;
-        totalPriceCheckoutText.text  = "Total: U$$" + totalPrice;
+        totalPriceCartText.text = "Total: U$$" + totalPrice.ToString("F2");;;
+        totalPriceCheckoutText.text  = "Total: U$$" + totalPrice.ToString("F2");;;
     }
 
     public void UpdateListOfProducts(List<GameObject> productsInCart)
