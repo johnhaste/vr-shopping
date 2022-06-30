@@ -18,7 +18,7 @@ public class CanvasProductInfo : MonoBehaviour
         {
             productNameText.text  = productInfo.name;
             productDescrText.text = productInfo.descr;
-            productPriceText.text = "U$$"+productInfo.price;
+            productPriceText.text = "U$$"+productInfo.price.ToString("F2");;
         }
         
     }
