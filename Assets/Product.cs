@@ -19,27 +19,6 @@ public class Product : MonoBehaviour
 
     //Grab area
     public GameObject grabArea;
-
-    //Check collision
-    /*
-    public Collider[] hitInfo;
-    public Transform hitBox;
-    public LayerMask hitMask;
-    public float hitRange = 0.5f;
-
-    public void CheckIfItsInCart(GameObject cart)
-    {
-    
-        //Will only hit objects inside the hitMask
-        hitInfo = Physics.OverlapSphere(hitBox.position, hitRange, hitMask);
-
-        //Loop and hit every object
-        foreach(Collider c in hitInfo){      
-            print(c.name);
-        }
-
-    }*/
-
    
     void OnTriggerEnter(Collider col)
     {

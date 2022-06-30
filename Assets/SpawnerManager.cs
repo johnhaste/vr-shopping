@@ -6,6 +6,7 @@ public class SpawnerManager : MonoBehaviour
 {
    public void SpawnObjectDuplicate(GameObject currentObject)
    {
+    
         if(currentObject.GetComponent<Product>().productSingularity == Product.singularity.ORIGINAL)
         {
             
