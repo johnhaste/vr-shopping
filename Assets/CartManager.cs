@@ -10,6 +10,10 @@ public class CartManager : MonoBehaviour
     public float totalPrice;
     public TextMeshProUGUI totalPriceText;
 
+    //Products List
+    public List<GameObject> productsInCart;
+
+    //Singleton
     public static CartManager instance;
  
     //Singleton
@@ -32,12 +36,14 @@ public class CartManager : MonoBehaviour
 
     public void addProductToCart(GameObject currentProduct)
     {
+        productsInCart.Add(currentProduct);
         totalPrice += currentProduct.GetComponent<Product>().price;
         updatePrice();
     }
 
     public void removeProductFromCart(GameObject currentProduct)
     {
+        productsInCart.Remove(currentProduct);
         totalPrice -= currentProduct.GetComponent<Product>().price;
         updatePrice();
     }
