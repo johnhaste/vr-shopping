@@ -38,6 +38,7 @@ public class CartManager : MonoBehaviour
     {
         currentProduct.transform.position = SlotsInCart[productsInCart.Count - 1].transform.position;
         currentProduct.transform.parent = SlotsInCart[productsInCart.Count - 1].transform;
+        currentProduct.GetComponent<Product>().grabArea.GetComponent<BoxCollider>().enabled = true;
 
         if(!currentProduct.GetComponent<Product>().isSmall)
         {
