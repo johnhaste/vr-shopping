@@ -11,6 +11,7 @@ public class CartManager : MonoBehaviour
 
     //Products List
     public List<GameObject> productsInCart;
+    public List<GameObject> SlotsInCart;
 
     //Singleton
     public static CartManager instance;
@@ -33,6 +34,23 @@ public class CartManager : MonoBehaviour
         UIManager.instance.UpdatePrice(0);
     }
 
+    public void addProductToSlot(GameObject currentProduct)
+    {
+        currentProduct.transform.parent = SlotsInCart[productsInCart.Count - 1].transform;
+
+        if(!currentProduct.GetComponent<Product>().isSmall)
+        {
+            currentProduct.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+            currentProduct.GetComponent<Product>().isSmall = true;
+        }
+        
+    }
+
+    public void removeProductFromSlot(GameObject currentProduct)
+    {
+        currentProduct.transform.parent = null;
+    }
+
     public void addProductToCart(GameObject currentProduct)
     {
         //Add product to cart
@@ -52,6 +70,13 @@ public class CartManager : MonoBehaviour
     {
         //Remove product from cart
         productsInCart.Remove(currentProduct);
+
+        //Resets Scale
+        if(currentProduct.GetComponent<Product>().isSmall)
+        {
+            currentProduct.transform.localScale = currentProduct.GetComponent<Product>().originalScale;
+            currentProduct.GetComponent<Product>().isSmall = false;
+        }
 
         //Decreases the current product price
         totalPrice -= currentProduct.GetComponent<Product>().price;

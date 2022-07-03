@@ -11,6 +11,9 @@ public class Product : MonoBehaviour
     public float price;
     public singularity productSingularity;
     public state productState;
+    public Vector3 originalScale;
+    public bool isSmall;
+
 
     //Status
     public enum singularity{ORIGINAL, COPY}
@@ -18,6 +21,12 @@ public class Product : MonoBehaviour
 
     //Grab area
     public GameObject grabArea;
+
+    void Start()
+    {
+        originalScale = transform.localScale;
+        isSmall = false;
+    }
    
     void OnTriggerEnter(Collider col)
     {
@@ -46,11 +55,13 @@ public class Product : MonoBehaviour
     {
         if(productState == state.CART)
         {
-            transform.parent = insideCart.transform;
+            //transform.parent = insideCart.transform;
+            CartManager.instance.addProductToSlot(gameObject);
         }
         else
         {
-             transform.parent = null;
+            //transform.parent = null;
+            CartManager.instance.removeProductFromSlot(gameObject);
         }
     }
 }
