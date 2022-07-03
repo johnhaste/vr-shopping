@@ -61,6 +61,7 @@ public class Product : MonoBehaviour
         else
         {
             //transform.parent = null;
+            GetComponent<Product>().grabArea.GetComponent<BoxCollider>().enabled = true;
             CartManager.instance.removeProductFromSlot(gameObject);
         }
     }

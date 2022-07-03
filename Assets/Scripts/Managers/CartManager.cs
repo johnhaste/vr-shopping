@@ -36,10 +36,21 @@ public class CartManager : MonoBehaviour
 
     public void addProductToSlot(GameObject currentProduct)
     {
-        currentProduct.transform.position = SlotsInCart[productsInCart.Count - 1].transform.position;
-        currentProduct.transform.parent = SlotsInCart[productsInCart.Count - 1].transform;
+
+        //Selects the appropriate slot
+        GameObject currentSlot = SlotsInCart[productsInCart.Count - 1];
+
+        //Make the product stay at the same position and rotation of the slot
+        currentProduct.transform.position = currentSlot.transform.position;
+        currentProduct.transform.rotation = Quaternion.Euler(0f,0f,0f);
+
+        //Insert the product in the slot
+        currentProduct.transform.parent = currentSlot.transform;
+
+        //Makes it possible to grab and remove the product later 
         currentProduct.GetComponent<Product>().grabArea.GetComponent<BoxCollider>().enabled = true;
 
+        //Makes the product small
         if(!currentProduct.GetComponent<Product>().isSmall)
         {
             currentProduct.transform.localScale = new Vector3(1f,1f,1f);
