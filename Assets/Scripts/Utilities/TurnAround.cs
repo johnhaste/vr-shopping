@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnAround : MonoBehaviour
 {
-    float rotationsPerMinute = 10f;
+    public float rotationsPerMinute = 10f;
 
     // Update is called once per frame
     void Update()
