@@ -38,10 +38,8 @@ public class CartManager : MonoBehaviour
     public void addProductToSlot(GameObject currentProduct)
     {
         //Selects the appropriate slot
-        
         bool hasFoundEmptySlot = false;
         GameObject currentSlot = slotsInCart[0];
-        //GameObject currentSlot = slotsInCart[productsInCart.Count - 1];
 
         foreach(GameObject cartSlot in slotsInCart)
         {
@@ -51,10 +49,6 @@ public class CartManager : MonoBehaviour
                 hasFoundEmptySlot = true;                
             }
         }
-        
-
-        //Selects the appropriate slot
-        //GameObject currentSlot = slotsInCart[productsInCart.Count - 1];
 
         //Update the price tag
         currentSlot.GetComponent<CartSlot>().productPriceCartText.text = "U$$" + currentProduct.GetComponent<Product>().price;

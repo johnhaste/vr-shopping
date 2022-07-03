@@ -14,7 +14,6 @@ public class Product : MonoBehaviour
     public Vector3 originalScale;
     public bool isSmall;
 
-
     //Status
     public enum singularity{ORIGINAL, COPY}
     public enum state{SHELF, CART}
