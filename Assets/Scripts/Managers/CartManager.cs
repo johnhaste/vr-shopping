@@ -36,11 +36,12 @@ public class CartManager : MonoBehaviour
 
     public void addProductToSlot(GameObject currentProduct)
     {
+        currentProduct.transform.position = SlotsInCart[productsInCart.Count - 1].transform.position;
         currentProduct.transform.parent = SlotsInCart[productsInCart.Count - 1].transform;
 
         if(!currentProduct.GetComponent<Product>().isSmall)
         {
-            currentProduct.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+            currentProduct.transform.localScale = new Vector3(1f,1f,1f);
             currentProduct.GetComponent<Product>().isSmall = true;
         }
         
