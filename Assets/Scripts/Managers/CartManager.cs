@@ -11,7 +11,7 @@ public class CartManager : MonoBehaviour
 
     //Products List
     public List<GameObject> productsInCart;
-    public List<GameObject> SlotsInCart;
+    public List<GameObject> slotsInCart;
 
     //Singleton
     public static CartManager instance;
@@ -37,9 +37,26 @@ public class CartManager : MonoBehaviour
 
     public void addProductToSlot(GameObject currentProduct)
     {
+        //Selects the appropriate slot
+        
+        bool hasFoundEmptySlot = false;
+        GameObject currentSlot = slotsInCart[0];
+        //GameObject currentSlot = slotsInCart[productsInCart.Count - 1];
+
+        foreach(GameObject cartSlot in slotsInCart)
+        {
+            if(cartSlot.transform.childCount == 1 && !hasFoundEmptySlot)
+            {
+                currentSlot = cartSlot;
+                hasFoundEmptySlot = true;                
+            }
+        }
+        
 
         //Selects the appropriate slot
-        GameObject currentSlot = SlotsInCart[productsInCart.Count - 1];
+        //GameObject currentSlot = slotsInCart[productsInCart.Count - 1];
+
+        //Update the price tag
         currentSlot.GetComponent<CartSlot>().productPriceCartText.text = "U$$" + currentProduct.GetComponent<Product>().price;
 
         //Make the product stay at the same position and rotation of the slot
