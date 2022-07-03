@@ -15,6 +15,7 @@ public class CartManager : MonoBehaviour
 
     //Singleton
     public static CartManager instance;
+
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -39,6 +40,7 @@ public class CartManager : MonoBehaviour
 
         //Selects the appropriate slot
         GameObject currentSlot = SlotsInCart[productsInCart.Count - 1];
+        currentSlot.GetComponent<CartSlot>().productPriceCartText.text = "U$$" + currentProduct.GetComponent<Product>().price;
 
         //Make the product stay at the same position and rotation of the slot
         currentProduct.transform.position = currentSlot.transform.position;
@@ -61,6 +63,11 @@ public class CartManager : MonoBehaviour
 
     public void removeProductFromSlot(GameObject currentProduct)
     {
+
+        //Resets the price tag
+        currentProduct.GetComponentInParent<CartSlot>().productPriceCartText.text = "-";
+
+        //Removes the product from the slot
         currentProduct.transform.parent = null;
     }
 
