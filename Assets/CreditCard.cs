@@ -11,7 +11,9 @@ public class CreditCard : MonoBehaviour
 
         if(col.name == "Credit Card Machine")
         {
-            col.GetComponent<CreditCardMachine>().CreditCardMachineText.text = "3";
+            //col.GetComponent<CreditCardMachine>().CreditCardMachineText.text = "3";
+            col.GetComponent<CreditCardMachine>().StartCountdown();
+
         }
     }
 
@@ -21,7 +23,8 @@ public class CreditCard : MonoBehaviour
 
         if(col.name == "Credit Card Machine")
         {
-            col.GetComponent<CreditCardMachine>().CreditCardMachineText.text = "Approximate The Card and WAIT";
+            
+            col.GetComponent<CreditCardMachine>().StopOperation();
         }
     }
 }
