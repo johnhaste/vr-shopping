@@ -40,18 +40,15 @@ public class CreditCardMachine : MonoBehaviour
     public IEnumerator Countdown()
     {
         DisplayLoadingBarImage();
-        CreditCardMachineText.text = "Approximate The Card and wait: \n" + countdown;
-        countdown--;
-        loadingBarImage.rectTransform.sizeDelta = new Vector2(10,5);
-        yield return new WaitForSeconds(1f);
-        CreditCardMachineText.text = "Approximate The Card and wait: \n" + countdown;
-        countdown--;
-        loadingBarImage.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(20,5);
-        yield return new WaitForSeconds(1f);
-        CreditCardMachineText.text = "Approximate The Card and wait: \n" + countdown;
-        loadingBarImage.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(30,5);
-        yield return new WaitForSeconds(1f);
-        loadingBarImage.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(40,5);
+
+        while(countdown > 0)
+        {
+            CreditCardMachineText.text = "Approximate The Card and wait: \n" + countdown;
+            countdown--;
+            loadingBarImage.rectTransform.sizeDelta = new Vector2(40 - (countdown * 15), 5);
+            yield return new WaitForSeconds(1f);
+        }
+        
         CreditCardMachineText.text = "Payment Approved!";
     }
 }
