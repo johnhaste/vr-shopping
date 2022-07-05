@@ -10,6 +10,8 @@ public class EnableGrabbingWhenCollided : MonoBehaviour
     public UIInteractionControllerSwitcher UIInteractionControllerSwitcherRighttHand;
     public TMP_Text debugText;
 
+    void Update(){}
+
     void OnTriggerEnter(Collider col)
     {
         print("Entered:"+col.name);
