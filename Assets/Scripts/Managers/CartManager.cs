@@ -35,6 +35,15 @@ public class CartManager : MonoBehaviour
         UIManager.instance.UpdatePrice(0);
     }
 
+    public void EmptyCart()
+    {
+        foreach(GameObject product in productsInCart)
+        {
+            removeProductFromCart(product);
+            removeProductFromSlot(product);
+        }
+    }
+
     public void addProductToSlot(GameObject currentProduct)
     {
         //Selects the appropriate slot

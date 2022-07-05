@@ -50,5 +50,6 @@ public class CreditCardMachine : MonoBehaviour
         }
         
         CreditCardMachineText.text = "Payment Approved!";
+        CartManager.instance.EmptyCart();
     }
 }
