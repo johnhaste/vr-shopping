@@ -6,6 +6,7 @@ public class LocalColorManager : MonoBehaviour
 {
     public GameObject product;
     public List<Color> availableColors;
+    public int index;
 
     void Start()
     {
@@ -16,7 +17,18 @@ public class LocalColorManager : MonoBehaviour
 
     public void ChangeToNextColor()
     {
-       product.GetComponent<Renderer>().material.color = Color.green;
-       product.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.green);
+        print("Change Color");
+
+        if(index < (availableColors.Count - 1) )
+        {
+            index++;
+        }
+        else
+        {
+            index = 0;
+        }
+
+        product.GetComponent<Product>().coloredPart.GetComponent<Renderer>().material.color = availableColors[index];
+        product.GetComponent<Product>().coloredPart.GetComponent<Renderer>().material.SetColor("_EmissionColor", availableColors[index]);
     }
 }

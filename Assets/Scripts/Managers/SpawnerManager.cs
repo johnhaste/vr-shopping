@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
+
+   public GameObject colorChangerLightsaber;
+
    public void SpawnObjectDuplicate(GameObject currentObject)
    {
     
@@ -13,6 +16,13 @@ public class SpawnerManager : MonoBehaviour
             //Instantiate a new original object where it was taken
             GameObject newObject = Instantiate(currentObject, currentObject.transform.position, Quaternion.identity);
             newObject.GetComponent<Product>().productSingularity = Product.singularity.ORIGINAL;
+
+            //Updates the color changer
+            if(currentObject.name.Contains("Lightsaber"))
+            {
+                print("Update object");
+                colorChangerLightsaber.GetComponent<LocalColorManager>().product = newObject;
+            }
 
             //Make the current object in my hand become a copy
             currentObject.GetComponent<Product>().productSingularity = Product.singularity.COPY;
