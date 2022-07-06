@@ -1,0 +1,404 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "width" : 1920.0,
+  "height" : 1080.0,
+  "version" : "0.5",
+  "editRate" : 30,
+  "authoringClientName" :  {
+    "name" : "Camtasia Studio",
+    "platform" : "Windows",
+    "version" : "9.0"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "C:\\Users\\John Haste\\Documents\\Camtasia Studio\\Rec 07-06-22.trec",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20220706T212636",
+      "sourceTracks" : [
+        {
+          "range" : [0, 8400],
+          "type" : 0,
+          "editRate" : 30,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : 28,
+          "bitDepth" : 0,
+          "numChannels" : 0,
+          "metaData" : "Rec 07-06-22.trec;"
+        },
+        {
+          "range" : [0, 8398000],
+          "type" : 0,
+          "editRate" : 30000,
+          "trackRect" : [0, 0, 640, 480],
+          "sampleRate" : 16,
+          "bitDepth" : 0,
+          "numChannels" : 0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 12349440],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 12345344],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 2,
+      "src" : "C:\\Users\\John Haste\\Documents\\Camtasia Studio\\Rec 07-06-22 1.trec",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20220706T215502",
+      "sourceTracks" : [
+        {
+          "range" : [0, 15662],
+          "type" : 0,
+          "editRate" : 30,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : 28,
+          "bitDepth" : 0,
+          "numChannels" : 0,
+          "metaData" : "Rec 07-06-22 1.trec;"
+        },
+        {
+          "range" : [0, 15661000],
+          "type" : 0,
+          "editRate" : 30000,
+          "trackRect" : [0, 0, 640, 480],
+          "sampleRate" : 16,
+          "bitDepth" : 0,
+          "numChannels" : 0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 23021568],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 23021568],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "metaData" : ""
+        }
+      ]
+    }
+  ],
+  "timeline" : {
+    "id" : 3,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "duration" : 277.833333333333,
+          "title" : "",
+          "type" : "",
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                  {
+                    "id" : 4,
+                    "_type" : "UnifiedMedia",
+                    "video" : 
+                        {
+                          "id" : 5,
+                          "_type" : "ScreenVMFile",
+                          "src" : 1,
+                          "trackNumber" : 0,
+                          "attributes" : {
+                            "ident" : "Rec 07-06-22"
+                          },
+                          "parameters" : {
+                            "translation1" : {
+                              "type" : "double",
+                              "defaultValue" : -26.7857142856518,
+                              "interp" : "eioe"
+                            },
+                            "scale1" : {
+                              "type" : "double",
+                              "defaultValue" : 1.04960317460306,
+                              "interp" : "eioe"
+                            },
+                            "cursorScale" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "interp" : "linr"
+                            },
+                            "cursorOpacity" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "interp" : "linr"
+                            }
+                          },
+                          "effects" : [
+
+                          ],
+                          "start" : 0,
+                          "duration" : 8335,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 8335,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        },
+                    "audio" : 
+                        {
+                          "id" : 6,
+                          "_type" : "AMFile",
+                          "src" : 1,
+                          "trackNumber" : 3,
+                          "attributes" : {
+                            "ident" : "",
+                            "sampleRate" : 44100,
+                            "bitDepth" : 16,
+                            "gain" : 1.0,
+                            "mixToMono" : false
+                          },
+                            "channelNumber" : "0,1",
+                          "effects" : [
+                              {
+                                "effectName" : "WinCompression",
+                                "category" : "categoryAudioEffects",
+                                "parameters" : {
+                                  "attack" : 0.0,
+                                  "gain" : 9.0,
+                                  "preset" : 1,
+                                  "ratio" : 10.0,
+                                  "release" : 3500.0,
+                                  "threshold" : -20.0
+                                },
+                                "metadata" : {
+                                  "effectIndex" : "0"
+                                }
+                              }
+                          ],
+                          "start" : 0,
+                          "duration" : 8335,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 8335,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        }
+,
+                    "start" : 0,
+                    "duration" : 8335,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 8398,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "AutoAppliedSmartFocus" : "False",
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-scale1" : 1.0,
+                      "default-translation1" : 0.0
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                  {
+                    "id" : 7,
+                    "_type" : "UnifiedMedia",
+                    "video" : 
+                        {
+                          "id" : 8,
+                          "_type" : "VMFile",
+                          "src" : 1,
+                          "trackNumber" : 1,
+                          "attributes" : {
+                            "ident" : "Rec 07-06-22"
+                          },
+                          "parameters" : {
+                            "translation0" : {
+                              "type" : "double",
+                              "defaultValue" : -740.714285714094,
+                              "interp" : "eioe"
+                            },
+                            "translation1" : {
+                              "type" : "double",
+                              "defaultValue" : -375.535714285343,
+                              "interp" : "eioe"
+                            },
+                            "scale0" : {
+                              "type" : "double",
+                              "defaultValue" : 0.685267857143553,
+                              "interp" : "eioe"
+                            },
+                            "scale1" : {
+                              "type" : "double",
+                              "defaultValue" : 0.685267857143553,
+                              "interp" : "eioe"
+                            }
+                          },
+                          "effects" : [
+
+                          ],
+                          "start" : 0,
+                          "duration" : 8335,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 8335,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        },
+                    "audio" : 
+                        {
+                          "id" : 9,
+                          "_type" : "AMFile",
+                          "src" : 1,
+                          "trackNumber" : 2,
+                          "attributes" : {
+                            "ident" : "",
+                            "sampleRate" : 44100,
+                            "bitDepth" : 16,
+                            "gain" : 1.0,
+                            "mixToMono" : false
+                          },
+                            "channelNumber" : "0,1",
+                          "effects" : [
+                              {
+                                "effectName" : "WinCompression",
+                                "category" : "categoryAudioEffects",
+                                "parameters" : {
+                                  "attack" : 0.0,
+                                  "gain" : 9.0,
+                                  "preset" : 1,
+                                  "ratio" : 10.0,
+                                  "release" : 3500.0,
+                                  "threshold" : -20.0
+                                },
+                                "metadata" : {
+                                  "effectIndex" : "0"
+                                }
+                              }
+                          ],
+                          "start" : 0,
+                          "duration" : 8335,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 8335,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        }
+,
+                    "start" : 0,
+                    "duration" : 8335,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 8398,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-scale0" : 0.25,
+                      "default-scale1" : 0.25,
+                      "default-translation0" : 880.0,
+                      "default-translation1" : -480.0
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 64,
+      "backgroundColor" : [ 0, 0, 0, 191],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "AutoSaveFile" : "C:\\Users\\John Haste\\AppData\\Local\\TechSmith\\Camtasia Studio\\9.0\\Auto-Saves\\Review Português1787e24.autosave.tscproj",
+    "CanvasZoom" : 28,
+    "Date" : "2022-07-06 06:26:46 ",
+    "IsAutoSave" : "0",
+    "Language" : "ENU",
+    "ProfileName" : "",
+    "ProjectDimensionsChanged" : "1",
+    "Title" : "Review Português",
+    "audioNarrationNotes" : "",
+    "calloutStyle" : "Basic",
+    "canvasDetached" : "False",
+    "canvasPositionHeight" : "0",
+    "canvasPositionLeft" : "0",
+    "canvasPositionTop" : "0",
+    "canvasPositionWidth" : "0"
+  }
+}
