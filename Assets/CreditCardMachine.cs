@@ -12,7 +12,11 @@ public class CreditCardMachine : MonoBehaviour
     public TextMeshProUGUI CreditCardMachineText;
     public Image loadingBarImage;
 
+    //Buy countdown
     private int countdown;
+
+    //Sound when payment is approved
+    public AudioClip soundEffect;
 
     public void StartCountdown()
     {
@@ -49,7 +53,13 @@ public class CreditCardMachine : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         
+        //Feedback for the user
         CreditCardMachineText.text = "Payment Approved!";
+        
+        //Makes a sound
+        AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+
+        //Removes all products from the cart
         CartManager.instance.EmptyCart();
     }
 }

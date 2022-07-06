@@ -5,13 +5,13 @@ using UnityEngine;
 public class VolumeSensor : MonoBehaviour
 {
 
-    public AudioSource audioSource;
+    public GameObject audioSourceObject;
 
     void OnTriggerEnter(Collider col)
     {
         if(col.name.Contains("XR"))
         {
-           audioSource.volume = 0.3f;
+            audioSourceObject.GetComponent<AudioSource>().volume = 0.3f;
         }
     }
 
@@ -19,7 +19,7 @@ public class VolumeSensor : MonoBehaviour
     {
         if(col.name.Contains("XR"))
         {
-           audioSource.volume = 0.0f;
+           audioSourceObject.GetComponent<AudioSource>().volume = 0.0f;
         }
     }
 }
