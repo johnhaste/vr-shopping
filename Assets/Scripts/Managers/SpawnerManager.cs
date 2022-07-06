@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnerManager : MonoBehaviour
 {
 
+   public AudioClip soundEffect;
    public GameObject colorChangerLightsaber;
 
    public void SpawnObjectDuplicate(GameObject currentObject)
@@ -16,6 +17,7 @@ public class SpawnerManager : MonoBehaviour
             //Instantiate a new original object where it was taken
             GameObject newObject = Instantiate(currentObject, currentObject.transform.position, Quaternion.identity);
             newObject.GetComponent<Product>().productSingularity = Product.singularity.ORIGINAL;
+            AudioSource.PlayClipAtPoint(soundEffect, transform.position);
 
             //Updates the color changer
             if(currentObject.name.Contains("Lightsaber"))

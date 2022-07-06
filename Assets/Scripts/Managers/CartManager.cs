@@ -16,6 +16,9 @@ public class CartManager : MonoBehaviour
     //Singleton
     public static CartManager instance;
 
+    //Sound when add or remove product
+    public AudioClip soundEffect;
+
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -47,6 +50,9 @@ public class CartManager : MonoBehaviour
 
     public void addProductToSlot(GameObject currentProduct)
     {
+        //Makes a sound
+        AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+
         //Selects the appropriate slot
         bool hasFoundEmptySlot = false;
         GameObject currentSlot = slotsInCart[0];
@@ -88,6 +94,9 @@ public class CartManager : MonoBehaviour
     public void removeProductFromSlot(GameObject currentProduct)
     {
 
+        //Makes a sound
+        AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+        
         //Resets the price tag
         currentProduct.GetComponentInParent<CartSlot>().productPriceCartText.text = "-";
 

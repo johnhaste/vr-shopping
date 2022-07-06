@@ -5,7 +5,6 @@ using UnityEngine;
 public class MovementDetector : MonoBehaviour
 {
 
-    //First you define the AudioClip
     public AudioClip soundEffect;
     public Vector3 lastPosition;
 
