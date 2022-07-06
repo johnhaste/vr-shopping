@@ -49,7 +49,8 @@ public class CreditCardMachine : MonoBehaviour
         AudioSource.PlayClipAtPoint(soundEffect, transform.position);
 
         //Removes all products from the cart
-        CartManager.instance.EmptyCart();
+        //TODO fix removal
+        //CartManager.instance.EmptyCart();
     }
 
     //If the card is removed, stops the operation

@@ -40,14 +40,35 @@ public class CartManager : MonoBehaviour
     }
 
     //Removes all products and empty the cart
+    //TODO fix removal
     public void EmptyCart()
     {
-        foreach(GameObject product in productsInCart)
+        foreach(GameObject cartSlot in slotsInCart)
         {
-            removeProductFromCart(product);
-            removeProductFromSlot(product);
-            Destroy(product.gameObject);
+            cartSlot.GetComponent<CartSlot>().productPriceCartText.text = "-";
         }
+
+        //Clears the list
+        productsInCart.Clear();
+
+        //Update total price UIs
+        UIManager.instance.UpdatePrice(0);
+
+        //Resets text
+        UIManager.instance.EmptyListOfProducts();
+
+        //Update the checkout text
+        UIManager.instance.UpdateListOfProducts(productsInCart);
+
+        for(int i = 0; i < 6; i++)
+        {
+            if(productsInCart[i] != null)
+            {
+                //Destroy the products
+                Destroy(productsInCart[i].gameObject);
+            }
+        }
+
     }
 
     //Add a miniature product to a specific empty slot

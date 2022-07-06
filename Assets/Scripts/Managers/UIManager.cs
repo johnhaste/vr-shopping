@@ -56,4 +56,9 @@ public class UIManager : MonoBehaviour
         listOfProducts.text = completeText;
 
     }
+
+    public void EmptyListOfProducts()
+    {
+        listOfProducts.text = "Your cart is currently empty!";
+    }
 }
