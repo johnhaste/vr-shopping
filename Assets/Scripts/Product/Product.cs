@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Product : MonoBehaviour
 {
+    /* Contains all Product properties and collision detectors*/
+
     //Attributes
     public string name;
     public string descr;
@@ -26,6 +28,7 @@ public class Product : MonoBehaviour
 
     void Start()
     {
+        //Saves the product original scale
         originalScale = transform.localScale;
         isSmall = false;
     }
@@ -33,6 +36,7 @@ public class Product : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         
+        //Checks if the product was placed inside the cart
         if(col.name == "Inside Cart" && productState != state.CART)
         {
             //Updates product state
@@ -45,6 +49,7 @@ public class Product : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
+        //Checks if the product was removed from the cart
         if(col.name == "Inside Cart" && productState != state.SHELF)
         {
             productState = state.SHELF;
@@ -55,16 +60,19 @@ public class Product : MonoBehaviour
     //Check if the product is in the cart when it's released
     public void CheckIfItsInCart(GameObject insideCart)
     {
+        //If the product was dropped inside the cart
         if(productState == state.CART)
         {
-            //transform.parent = insideCart.transform;
+            //Adds the product to an available slot
             CartManager.instance.addProductToSlot(gameObject);
         }
         else
         {
+            //Removes the grab area
             GetComponent<Product>().grabArea.GetComponent<BoxCollider>().enabled = true;
-            CartManager.instance.removeProductFromSlot(gameObject);
             
+            //Removes the product from the specific slot
+            CartManager.instance.removeProductFromSlot(gameObject);
         }
     }
 }

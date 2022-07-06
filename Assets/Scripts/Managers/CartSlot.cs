@@ -5,5 +5,6 @@ using TMPro;
 
 public class CartSlot : MonoBehaviour
 {
+    //Product Price Specific Text
     public TextMeshProUGUI productPriceCartText;
 }

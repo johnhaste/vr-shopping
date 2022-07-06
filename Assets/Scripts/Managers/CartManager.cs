@@ -5,6 +5,8 @@ using TMPro;
 
 public class CartManager : MonoBehaviour
 {
+    /*Manages the products insert in the cart and the slots where they must be.
+    Updates the total price and the slots price of products*/
 
     //Total Price
     public float totalPrice;
@@ -13,12 +15,11 @@ public class CartManager : MonoBehaviour
     public List<GameObject> productsInCart;
     public List<GameObject> slotsInCart;
 
-    //Singleton
-    public static CartManager instance;
-
     //Sound when add or remove product
     public AudioClip soundEffect;
 
+    //Singleton
+    public static CartManager instance;
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -38,6 +39,7 @@ public class CartManager : MonoBehaviour
         UIManager.instance.UpdatePrice(0);
     }
 
+    //Removes all products and empty the cart
     public void EmptyCart()
     {
         foreach(GameObject product in productsInCart)
@@ -48,6 +50,7 @@ public class CartManager : MonoBehaviour
         }
     }
 
+    //Add a miniature product to a specific empty slot
     public void addProductToSlot(GameObject currentProduct)
     {
         //Makes a sound
@@ -56,7 +59,6 @@ public class CartManager : MonoBehaviour
         //Selects the appropriate slot
         bool hasFoundEmptySlot = false;
         GameObject currentSlot = slotsInCart[0];
-
         foreach(GameObject cartSlot in slotsInCart)
         {
             if(cartSlot.transform.childCount == 1 && !hasFoundEmptySlot)
@@ -91,6 +93,7 @@ public class CartManager : MonoBehaviour
         
     }
 
+    //Removes a product from the slot it was and updates the price tag
     public void removeProductFromSlot(GameObject currentProduct)
     {
 
@@ -107,6 +110,7 @@ public class CartManager : MonoBehaviour
         UpdateSlotsStatus();
     }
 
+    //Extra verification of empty slots
     public void UpdateSlotsStatus()
     {
         foreach(GameObject cartSlot in slotsInCart)
@@ -118,6 +122,7 @@ public class CartManager : MonoBehaviour
         }
     }
 
+    //Simulates adding a product to the cart
     public void addProductToCart(GameObject currentProduct)
     {
 
@@ -151,6 +156,7 @@ public class CartManager : MonoBehaviour
 
     }
 
+    //Simulates removing a product from the cart
     public void removeProductFromCart(GameObject currentProduct)
     {
         //Remove product from cart

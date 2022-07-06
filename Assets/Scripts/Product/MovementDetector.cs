@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MovementDetector : MonoBehaviour
 {
-
-    public AudioClip soundEffect;
+    //Tracks the object position
     public Vector3 lastPosition;
 
-    // Start is called before the first frame update
+    //Sound effect when it moves
+    public AudioClip soundEffect;
+    
     void Start()
     {
         StartCoroutine(CheckIfMoved());
@@ -19,13 +20,18 @@ public class MovementDetector : MonoBehaviour
         while (true)
         {
            float movementDifferenceY =  Mathf.Abs(lastPosition.y - transform.position.y);
-           //float movementDifferenceX =  Mathf.Abs(lastPosition.x - transform.position.x);
-           //float movementDifferenceZ =  Mathf.Abs(lastPosition.z - transform.position.z);
-           if(movementDifferenceY > 0.2f ){
+
+           //If the lighsaber moves more than 0.2f in Y in less than 0.3 seconds
+           if(movementDifferenceY > 0.2f )
+           {
                //Plays the sound at that position
                AudioSource.PlayClipAtPoint (soundEffect, transform.position);
            }
+
+           //Updates the last position every 0.3 seconds
            lastPosition = transform.position;
+
+           //Waits for 0.3 seconds
            yield return new WaitForSeconds(0.3f);
         }
     }

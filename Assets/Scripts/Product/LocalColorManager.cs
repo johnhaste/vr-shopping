@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class LocalColorManager : MonoBehaviour
 {
+    //The product that will have the color changed
     public GameObject product;
+
+    //The available colors
     public List<Color> availableColors;
+
+    //The current color index
     public int index;
 
     void Start()
@@ -15,10 +20,11 @@ public class LocalColorManager : MonoBehaviour
         availableColors.Add(Color.red);
     }
 
+    //Changes the material to the next color
     public void ChangeToNextColor()
     {
-        print("Change Color");
 
+        //Changes the index
         if(index < (availableColors.Count - 1) )
         {
             index++;
@@ -28,6 +34,7 @@ public class LocalColorManager : MonoBehaviour
             index = 0;
         }
 
+        //Update the color and the emission color
         product.GetComponent<Product>().coloredPart.GetComponent<Renderer>().material.color = availableColors[index];
         product.GetComponent<Product>().coloredPart.GetComponent<Renderer>().material.SetColor("_EmissionColor", availableColors[index]);
     }

@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CreditCard : MonoBehaviour
 {
+    /*Detects when whe credit card is touching the machine, so it
+    starts the countdown and confirm the payment.*/
 
     void OnTriggerEnter(Collider col)
     {
-        print("Col:" + col.name);
-
         if(col.name == "Credit Card Machine")
         {
-            //col.GetComponent<CreditCardMachine>().CreditCardMachineText.text = "3";
             col.GetComponent<CreditCardMachine>().StartCountdown();
 
         }
@@ -19,8 +18,6 @@ public class CreditCard : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        print("Col:" + col.name);
-
         if(col.name == "Credit Card Machine")
         {
             col.GetComponent<CreditCardMachine>().StopOperation();

@@ -7,6 +7,9 @@ using TMPro;
 public class CreditCardMachine : MonoBehaviour
 {
 
+    /*Detects when whe credit card is touching the machine, so it
+    starts the countdown and confirm the payment.*/
+
     //UI
     public GameObject NFCLogo;
     public TextMeshProUGUI CreditCardMachineText;
@@ -18,31 +21,17 @@ public class CreditCardMachine : MonoBehaviour
     //Sound when payment is approved
     public AudioClip soundEffect;
 
+    //Starts the countdown routine
     public void StartCountdown()
     {
         countdown = 3;
         StartCoroutine(Countdown());
     }
-
-    public void DisplayLoadingBarImage()
-    {
-        loadingBarImage.enabled = true;
-    }
-
-    public void HideLoadingBarImage()
-    {
-        loadingBarImage.enabled = false;
-    }
-
-    public void StopOperation()
-    {
-        StopAllCoroutines();
-        HideLoadingBarImage();
-        CreditCardMachineText.text = "Approximate The Card and WAIT";
-    }
-
+     
+    //Starts the countdown to confirm the payment
     public IEnumerator Countdown()
     {
+
         DisplayLoadingBarImage();
 
         while(countdown > 0)
@@ -61,5 +50,23 @@ public class CreditCardMachine : MonoBehaviour
 
         //Removes all products from the cart
         CartManager.instance.EmptyCart();
+    }
+
+    //If the card is removed, stops the operation
+    public void StopOperation()
+    {
+        StopAllCoroutines();
+        HideLoadingBarImage();
+        CreditCardMachineText.text = "Approximate The Card and WAIT";
+    }
+
+    public void DisplayLoadingBarImage()
+    {
+        loadingBarImage.enabled = true;
+    }
+
+    public void HideLoadingBarImage()
+    {
+        loadingBarImage.enabled = false;
     }
 }

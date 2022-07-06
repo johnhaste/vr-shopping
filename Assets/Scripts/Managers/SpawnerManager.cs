@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
-
+   //Makes a sound when it spawns an object
    public AudioClip soundEffect;
+
+   //Manages the color Changer for the lightsaber
    public GameObject colorChangerLightsaber;
 
+   //Singleton
+   public static SpawnerManager instance;
+   private void Awake()
+   {
+       if(instance != null && instance != this)
+       {
+           Destroy(this.gameObject);
+           return;
+       }
+       instance = this;
+       DontDestroyOnLoad(gameObject);
+   }
+
+   //Creates a copy of the product
    public void SpawnObjectDuplicate(GameObject currentObject)
    {
-    
+
+        //Checks if it must duplicate the product
         if(currentObject.GetComponent<Product>().productSingularity == Product.singularity.ORIGINAL)
         {
             
