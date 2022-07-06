@@ -32,6 +32,7 @@ public class Product : MonoBehaviour
    
     void OnTriggerEnter(Collider col)
     {
+        
         if(col.name == "Inside Cart" && productState != state.CART)
         {
             //Updates product state
@@ -39,16 +40,6 @@ public class Product : MonoBehaviour
 
             //Adds product to cart
             CartManager.instance.addProductToCart(gameObject);
-  
-        }
-        else if (col.name == "Renderer_Head" && productState != state.CART)
-        {
-
-            print("Detected Head");
-
-            //Updates product state
-            productState = state.HEAD;
-
         }
     }
 
@@ -71,24 +62,9 @@ public class Product : MonoBehaviour
         }
         else
         {
-
-            if(productState == state.HEAD )
-            {
-                
-                gameObject.transform.parent = DressUpManager.instance.playerHead.transform;
-                gameObject.transform.rotation = Quaternion.Euler(DressUpManager.instance.playerHead.transform.rotation.x,-130f,DressUpManager.instance.playerHead.transform.rotation.z);
-                gameObject.transform.position = new Vector3(DressUpManager.instance.playerHead.transform.position.x + 0.3f, DressUpManager.instance.playerHead.transform.position.y + 0.09f, DressUpManager.instance.playerHead.transform.position.z + 0.13f);
-            }
-            else
-            {
-              gameObject.transform.parent = null;  
-            }
-
-            //transform.parent = null;
             GetComponent<Product>().grabArea.GetComponent<BoxCollider>().enabled = true;
             CartManager.instance.removeProductFromSlot(gameObject);
-
-
+            
         }
     }
 }

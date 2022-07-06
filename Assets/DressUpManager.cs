@@ -6,6 +6,7 @@ public class DressUpManager : MonoBehaviour
 {
 
     public GameObject playerHead;
+    public GameObject playerHelmet;
 
     //Singleton
     public static DressUpManager instance;
@@ -19,5 +20,15 @@ public class DressUpManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void ActivateHelmet()
+    {
+        playerHelmet.SetActive(true);
+    }
+
+    public void DeactivateHelmet()
+    {
+        playerHelmet.SetActive(false);
     }
 }

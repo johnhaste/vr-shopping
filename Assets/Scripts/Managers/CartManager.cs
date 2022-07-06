@@ -78,6 +78,9 @@ public class CartManager : MonoBehaviour
             currentProduct.transform.localScale = new Vector3(1f,1f,1f);
             currentProduct.GetComponent<Product>().isSmall = true;
         }
+
+        //Double Check Slots
+        UpdateSlotsStatus();
         
     }
 
@@ -89,21 +92,53 @@ public class CartManager : MonoBehaviour
 
         //Removes the product from the slot
         currentProduct.transform.parent = null;
+
+        //Double Check Slots
+        UpdateSlotsStatus();
+    }
+
+    public void UpdateSlotsStatus()
+    {
+        foreach(GameObject cartSlot in slotsInCart)
+        {
+            if(cartSlot.transform.childCount == 1)
+            {
+                cartSlot.GetComponentInParent<CartSlot>().productPriceCartText.text = "-";           
+            }
+        }
     }
 
     public void addProductToCart(GameObject currentProduct)
     {
-        //Add product to cart
-        productsInCart.Add(currentProduct);
 
-        //Adds the current product price
-        totalPrice += currentProduct.GetComponent<Product>().price;
+        //Double check if the product is already in the cart or not
+        bool isInCart = false;
+        foreach(GameObject product in productsInCart)
+        {
+            if(product == currentProduct)
+            {
+                isInCart = true;
+            }
+        }
 
-        //Update total price UIs
-        UIManager.instance.UpdatePrice(totalPrice);
+        if(!isInCart)
+        {
+            //Add product to cart
+            productsInCart.Add(currentProduct);
 
-        //Update the checkout text
-        UIManager.instance.UpdateListOfProducts(productsInCart);
+            //Adds the current product price
+            totalPrice += currentProduct.GetComponent<Product>().price;
+
+            //Update total price UIs
+            UIManager.instance.UpdatePrice(totalPrice);
+
+            //Update the checkout text
+            UIManager.instance.UpdateListOfProducts(productsInCart);
+        }
+
+        //Double Check Slots
+        UpdateSlotsStatus();
+
     }
 
     public void removeProductFromCart(GameObject currentProduct)
@@ -126,6 +161,9 @@ public class CartManager : MonoBehaviour
 
         //Update the checkout text
         UIManager.instance.UpdateListOfProducts(productsInCart);
+
+        //Double Check Slots
+        UpdateSlotsStatus();
     }
 
 }
