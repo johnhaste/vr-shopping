@@ -23,7 +23,6 @@ public class CreditCard : MonoBehaviour
 
         if(col.name == "Credit Card Machine")
         {
-            
             col.GetComponent<CreditCardMachine>().StopOperation();
         }
     }

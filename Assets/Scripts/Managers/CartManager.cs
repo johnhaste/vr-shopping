@@ -41,6 +41,7 @@ public class CartManager : MonoBehaviour
         {
             removeProductFromCart(product);
             removeProductFromSlot(product);
+            Destroy(product.gameObject);
         }
     }
 
